@@ -12,17 +12,7 @@ function myFunction() {
 
 function ValidURL(x) {
     var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
-    if (!regex.test(x)) {
-      alert("Enter a valid url");
-      return false;
-    }
-    if((x.protocol)=="https:")
-    {
-    	alert("Url is not safe");
-    }
-    else{
-    	window.open(x);
-
+    (!regex.test(x)) ? (alert("Enter a valid url")) : (((x.protocol)=="http:") ? (alert("Url is not safe")) : window.open(x));
     }
       
 }
