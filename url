@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+Homepage: <input type="url" id="myURL" value="http://www.google.com">
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+  var x = document.getElementById("myURL").value;
+  ValidURL(x);
+}
+
+function ValidURL(x) {
+    var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+    if (!regex.test(x)) {
+      alert("Enter a valid url");
+      return false;
+    }
+    if((x.protocol)=="https:")
+    {
+    	alert("Url is not safe");
+    }
+    else{
+    	window.open(x);
+
+    }
+      
+}
+</script>
+
+</body>
+</html>
